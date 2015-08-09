@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: achieve_production
-  username: achieve
-  password: <%= ENV['ACHIEVE_DATABASE_PASSWORD'] %>
+  database: ddkk5ojgkegncc
+  username: cqrqbfxoftiiri
+  password: RkJDrgV_7Q-z6AbKa_ImeQFizy
+  hostname: ec2-54-243-132-114.compute-1.amazonaws.com:5432

@@ -1,15 +1,43 @@
-<h1>お問い合わせ</h1>
-<%= form_for @contact do |f| %>
-<ul>
+
+<header>
+  <div class="contact-header">
+    <h1>お問い合わせ</h1>
+    <%= form_for @contact do |f| %></div>
+</header>
+<div class="contact-main">
+  <ul>
   <p>名前</p>
-<li><%= f.text_field :name %></li>
-  <p>フリガナ</p>
-<li><%= f.text_field :name2 %></li>
-  <p>メールアドレス</p>
-<li><%= f.text_field :addres %></li>
-  <p>内容</p>
-<li><%= f.text_area :content %></li>
-<li><%= f.submit %>
+    <li><%= f.text_field :name %></li>
+      <p>フリガナ</p>
+    <li><%= f.text_field :name2 %></li>
+      <p>メールアドレス</p>
+    <li><%= f.text_field :addres %></li>
+      <p>内容</p>
+    <li class="text-area"><%= f.text_area :content %></li>
+    <li><%= f.submit %></li>
 </ul>
+</div>
+
+ 
 <% end %>
-<%= link_to "Top", root_path %>
+
+
+<p class="send-message"><%= notice %></p>
+
+<% if @contact.errors.any? %>
+<div id="error_explanation" class="alert-danger">
+      <h2><%= @contact.errors.count %>件のエラー</h2>
+
+      <ul>
+        <!-- ここでeachメソッドを用いて、エラーメッセージを表示させてください。 -->
+       <%  @contact.errors.full_messages.each do |message| %>
+       <li class="errors"><%= message %></li>
+       <% end %>
+      </ul>
+    </div>
+ <% end %>
+
+
+<footer>
+  <div class="footer-link"><%= link_to "Top", root_path %></div>
+</footer>

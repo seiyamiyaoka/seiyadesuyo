@@ -7,8 +7,8 @@ ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
   
 { 
-  :user_name => "app39875905@heroku.com", 
-:password => "2oqyvwfy2586", 
+  :user_name => "app41119998@heroku.com", 
+:password => "2aagqgu62111", 
   
   
   :domain => "heroku.com", 

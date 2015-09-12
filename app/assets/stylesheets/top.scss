@@ -1,6 +1,17 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.jumbotron{
+  background: #000 url("yasai.jpg") center center;
+  background-size: cover;
+  h1,p{
+    color:#00A0E9;
+    text-align:center;
+    margin-top:20px;
+  }
+}
 body{
   margin: 0; 
 font-family: "メイリオ", Meiryo,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif; 

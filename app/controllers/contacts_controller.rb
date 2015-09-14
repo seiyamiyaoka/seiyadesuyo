@@ -3,15 +3,18 @@ class ContactsController < ApplicationController
      @contact = Contact.new
   end
   
-  def create
+  def permit
     @contact = Contact.new(create_params)
-    if @contact.save
+    if @contact.valid?
        
-       redirect_to contacts_path, notice: '送信しました'
+      render action: 'permit'
       #redirect_to contacts_path :index
     else
-      render action: :index
+      render action: 'index'
       
+    end
+    def thanks
+      @contact = Contact.create(create_params)
     end
   end
   

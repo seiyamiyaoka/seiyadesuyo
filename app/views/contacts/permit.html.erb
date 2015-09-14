@@ -1,0 +1,14 @@
+<%= form_for @contact,url:contacts_thanks_path do |f| %>
+<%= f.hidden_field :name %>
+<%= @contact.name %>
+
+<%= f.hidden_field :name2 %>
+<%= @contact.name2 %>
+
+<%= f.hidden_field :addres %>
+<%= @contact.addres %>
+
+<%= f.hidden_field :content %>
+<%= @contact.content %>
+<%= f.submit "送信" %>
+<% end %>

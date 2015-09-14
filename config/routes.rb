@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index,:show]
   root to: "top#index"
   get 'contacts' => 'contacts#index'
-  
-  post 'contacts' => 'contacts#create'
+  post 'contacts/permit' => 'contacts#permit'
+  post 'contacts/thanks' => 'contacts#thanks'
 
   resources :blogs
   # The priority is based upon order of creation: first created -> highest priority.

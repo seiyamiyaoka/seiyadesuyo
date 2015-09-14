@@ -1,39 +1,11 @@
-<div class="item">
-  <img src="..." alt="...">
-  <div class="carousel-caption">
-    <h3>...</h3>
-    <p>...</p>
-  </div>
-</div>
 
-
-
-
-
-<header>
-  <div class="contact-header">
+<div class="contact-header">
     <h1>お問い合わせ</h1>
-    <%= form_for @contact do |f| %></div>
-</header>
-<div class="contact-main">
-  <ul>
-  <p>名前</p>
-    <li><%= f.text_field :name %></li>
-      <p>フリガナ</p>
-    <li><%= f.text_field :name2 %></li>
-      <p>メールアドレス</p>
-    <li><%= f.text_field :addres %></li>
-      <p>内容</p>
-    <li class="text-area"><%= f.text_area :content %></li>
-    <li><%= f.submit %></li>
-</ul>
-</div>
-
- 
-<% end %>
+  <%= form_for @contact,url:contacts_permit_path do |f| %></div>
 
 
-<p class="send-message"><%= notice %></p>
+
+
 
 <% if @contact.errors.any? %>
 <div id="error_explanation" class="alert-danger">
@@ -49,6 +21,38 @@
  <% end %>
 
 
+
+
+
+
+<div class="input-group">
+	<span class="input-group-addon">ユーザー名</span>
+	<input type="text" class="form-control" placeholder="太郎">
+  <%= f.text_field :name %>
+</div>
+
+<div class="input-group">
+	<span class="input-group-addon">  フリガナ  </span>
+	<input type="text" class="form-control" placeholder="タロウ">
+  <%= f.text_field :name2 %>
+</div>
+
+<div class="input-group">
+	<span class="input-group-addon">email</span>
+	<input type="text" class="form-control" placeholder="@example.com">
+  <%= f.text_field :addres %>
+</div>
+
+<div class="input-group">
+	<span class="input-group-addon">内容</span>
+	<input type="text" class="form-control" placeholder="例:こんにちは">
+  <%= f.text_field :content %>
+</div>
+<button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span><%= f.submit "送信" %></button>
+<p class="send-message"><%= notice %></p>
+
+
 <footer>
   <div class="footer-link"><%= link_to "Top", root_path %></div>
 </footer>
+<% end %>

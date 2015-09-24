@@ -9,44 +9,57 @@
 
 <% if @contact.errors.any? %>
 <div id="error_explanation" class="alert-danger">
-      <h2><%= @contact.errors.count %>件のエラー</h2>
+  
+  <button class="btn btn-primary" type="button">
+  Messages <span class="badge"><%= @contact.errors.count %>件のエラー</span>
+  
+  
+      <h2></h2>
 
       <ul>
         <!-- ここでeachメソッドを用いて、エラーメッセージを表示させてください。 -->
        <%  @contact.errors.full_messages.each do |message| %>
-       <li class="errors"><%= message %></li>
+       <li class="errors">
+        <p class="text-left"> <%= message %></p> 
+         
+         
+        
+        
+        </li>
        <% end %>
       </ul>
     </div>
  <% end %>
 
 
+  
+  
+  
+  
+  
 
 
 
 
 <div class="input-group">
 	<span class="input-group-addon">ユーザー名</span>
-	<input type="text" class="form-control" placeholder="太郎">
-  <%= f.text_field :name %>
+  <%= f.text_field :name,class:"form-control" %>
 </div>
 
 <div class="input-group">
 	<span class="input-group-addon">  フリガナ  </span>
-	<input type="text" class="form-control" placeholder="タロウ">
-  <%= f.text_field :name2 %>
+  <%= f.text_field :name2,class:"form-control" %>
 </div>
 
 <div class="input-group">
 	<span class="input-group-addon">email</span>
-	<input type="text" class="form-control" placeholder="@example.com">
-  <%= f.text_field :addres %>
+	
+  <%= f.text_field :addres,class:"form-control" %>
 </div>
 
 <div class="input-group">
 	<span class="input-group-addon">内容</span>
-	<input type="text" class="form-control" placeholder="例:こんにちは">
-  <%= f.text_field :content %>
+  <%= f.text_area :content,class:"form-control" %>
 </div>
 <button type="button" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span><%= f.submit "送信" %></button>
 <p class="send-message"><%= notice %></p>

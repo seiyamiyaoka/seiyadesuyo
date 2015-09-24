@@ -1,5 +1,8 @@
 <div class="jumbotron">
+  <%= link_to "facebook認証", user_omniauth_authorize_path(:facebook), class: 'navbar-link' %>
+  <%= link_to "twitter認証", user_omniauth_authorize_path(:twitter), class: 'navbar-link' %>
   <h1>achieve</h1>
+  
   <p>『経験ゼロからWEBエンジニアになる！』</p>
   <p>achieveは、目標を支援するWEBアプリケーションです。</p>
   <p><a class="btn btn-primary btn-lg" href="" role="button"><%= link_to "今すぐ始める",new_user_session_path %></a></p>

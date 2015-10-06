@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about/company_overview'
+
   get 'users/index'
 
   get 'users/show'
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
   get 'contacts' => 'contacts#index'
   post 'contacts/permit' => 'contacts#permit'
   post 'contacts/thanks' => 'contacts#thanks'
+  
+  get 'about' => 'about#company_overview'
 
   resources :blogs
   # The priority is based upon order of creation: first created -> highest priority.

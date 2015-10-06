@@ -51,3 +51,5 @@ gem 'autoprefixer-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+gem 'bootstrap-social-rails'

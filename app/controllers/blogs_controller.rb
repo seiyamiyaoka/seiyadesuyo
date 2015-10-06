@@ -15,8 +15,9 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    if @blog.valid?
   end
-
+  end
   # GET /blogs/1/edit
   def edit
   end
@@ -54,12 +55,14 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
+   
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
       format.json { head :no_content }
+      redirect_to blogs_path
     end
-  end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +72,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:user_id, :title, :content)
     end
 end

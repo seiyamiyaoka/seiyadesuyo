@@ -41,4 +41,5 @@ Rails.application.configure do
   # deviseの設定 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.default_url_options = { host: 'morning-citadel-6370.herokuapp.com' }
+  BetterErrors::Middleware.allow_ip! '54.251.49.8'
 end

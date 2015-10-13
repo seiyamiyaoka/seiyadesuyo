@@ -4,13 +4,14 @@ class BlogsController < ApplicationController
   
   
   binding.pry
+  
   # GET /blogs
   # GET /blogs.json
   def index
     
     @blogs = Blog.all
   end
-
+  
   # GET /blogs/1
   # GET /blogs/1.json
   def show
@@ -33,8 +34,15 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
+        
+         UserMailer.dm.deliver
+        
+        
+        
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
+        
+        
       else
         format.html { render :new }
         format.json { render json: @blog.errors, status: :unprocessable_entity }

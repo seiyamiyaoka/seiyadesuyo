@@ -10,7 +10,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local       = false
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
@@ -39,7 +39,20 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   # deviseの設定 
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.default_url_options = { host: 'morning-citadel-6370.herokuapp.com' }
-  BetterErrors::Middleware.allow_ip! '54.251.49.8'
+   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+#   config.action_mailer.default_url_options = { host: 'morning-citadel-6370.herokuapp.com' }
+#   BetterErrors::Middleware.allow_ip! '54.251.49.8'
+  
+  
+  config.action_mailer.delivery_method = :smtp
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.smtp_settings = {
+   :enable_starttls_auto => true,
+   :address => 'smtp.gmail.com',
+  :port => '587',
+  :domain => 'smtp.gmail.com',
+   :authentication => 'plain',
+   :user_name => 'seiyamiyaoka@gmail.com',
+  :password => 'nqtvpyqlbfdirzqd'  
+}
 end

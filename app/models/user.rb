@@ -43,4 +43,5 @@ end
   def self.create_unique_email
 User.create_unique_string + "@example.com"
   end
+  
   end

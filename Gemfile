@@ -84,4 +84,5 @@ gem "rack-mini-profiler"
 #gem "rspec", "~> 3.0.0.beta"
 gem "spring-commands-rspec"
 gem "xray-rails"
+  gem 'will_paginate'
 end

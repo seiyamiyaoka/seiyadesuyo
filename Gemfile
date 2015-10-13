@@ -59,8 +59,6 @@ gem 'bootstrap-social-rails'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'rambulance'
-
-group :test, :development do
   gem 'awesome_print'
 gem 'better_errors'
 gem 'binding_of_caller' 
@@ -85,4 +83,6 @@ gem "rack-mini-profiler"
 gem "spring-commands-rspec"
 gem "xray-rails"
   gem 'will_paginate'
+group :test, :development do
+
 end

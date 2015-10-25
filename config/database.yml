@@ -75,12 +75,6 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: d5t7vfq52tnb9m
-  username: qtxovhjjzqlcsb
-  password: BT5ajrx58s5wfgLymN-iQK6C6B
-  hostname: ec2-54-235-162-144.compute-1.amazonaws.com:5432
+   production:
+     url: <%= ENV['DATABASE_URL'] %>
+

@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   
-  has_many :blogs
+  has_many :blogs, dependent: :destroy
+  
+  has_many :comments
   
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     

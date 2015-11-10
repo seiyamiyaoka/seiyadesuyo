@@ -10,5 +10,7 @@
   <%= @blog.content %>
 </p>
 
+<%= render partial: 'comments/form',locals:{ comments:@blog.comments } %>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %>
 <%= link_to 'Back', blogs_path %>

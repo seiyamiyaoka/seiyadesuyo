@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def update
     current_user.update(update_params)
   end
-  
+ 
   private
   
   def id_params
@@ -23,4 +23,5 @@ end
   def updadate_params
     params_require(:user).permit(:name,:profile)
   end
+ 
 end
